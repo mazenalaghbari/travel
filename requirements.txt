@@ -1,0 +1,11 @@
+streamlit
+google-generativeai
+python-dotenv
+langchain
+PyPDF2
+chromadb
+langchain
+openai
+huggingface_hub
+python-dotenv
+streamlit
