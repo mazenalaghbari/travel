@@ -33,7 +33,7 @@ def generate_travel_plan(country, num_adults, num_kids, travel_type, kinds_of_tr
     7. **Date Selection:** Your trip dates are from {start_date.strftime("%Y-%m-%d")} to {end_date.strftime("%Y-%m-%d")}. The duration of your trip is {num_days} days.
 
     Feel free to provide more details about your group's interests or ask for specific recommendations. 
-    Also provide the travel day by day activity plan based on dates are from {start_date.strftime("%Y-%m-%d")} to {end_date.strftime("%Y-%m-%d")}.
+    Also provide the travel day by day activity plan in a table based on dates are from {start_date.strftime("%Y-%m-%d")} to {end_date.strftime("%Y-%m-%d")}.
     """
     return input_prompt
 
