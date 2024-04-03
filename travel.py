@@ -55,7 +55,7 @@ accommodation_type = st.selectbox("Preferred accommodation type:", ["Hotel", "Ho
 accommodation_rating = st.slider("Preferred accommodation rating:", 1, 5, 3)
 dietary_restrictions = st.selectbox("Select dietary restrictions or health considerations:", ["None", "Vegetarian", "Vegan", "Gluten-free"])
 transportation_mode = st.selectbox("Preferred mode of transportation:", ["Flight", "Train", "Rental Car", "Public Transportation"])
-budget = st.number_input("Enter estimated budget:", min_value=0, value=1000)
+budget = st.number_input("Enter estimated budget: (USD)", min_value=0, value=1000)
 interests_activities = st.selectbox("Enter interests or activities you'd like to include:", ["Hiking", "Sightseeing", "Cultural Events", "Shopping"])
 budget_allocation = st.text_area("Enter breakdown of budget allocation for different aspects of the trip:")
 
