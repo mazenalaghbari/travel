@@ -4,6 +4,7 @@ import os
 import json
 import pandas as pd
 from datetime import datetime
+import pycountry
 
 def generate_travel_plan(country, num_adults, num_kids, travel_type, kinds_of_travelers, start_date, end_date, budget, num_days, accommodation_type, accommodation_rating, dietary_restrictions, transportation_mode, interests_activities, budget_allocation):
     input_prompt = f"""
@@ -13,7 +14,7 @@ def generate_travel_plan(country, num_adults, num_kids, travel_type, kinds_of_tr
     Create a detailed travel itinerary that caters to your group's interests and preferences for {num_days} days. 
     Your itinerary should cover the following aspects:
 
-    1. **Destination Highlights:** List  must-visit attractions in {country} and explain why they're worth visiting.
+    1. **Destination Highlights:** List three must-visit attractions in {country} and explain why they're worth visiting.
 
     2. **Activities:** Recommend activities or experiences suitable for {kinds_of_travelers}, such as {interests_activities}.
 
@@ -36,11 +37,14 @@ def generate_travel_plan(country, num_adults, num_kids, travel_type, kinds_of_tr
     """
     return input_prompt
 
+# Fetch list of all countries
+all_countries = [country.name for country in pycountry.countries]
+
 # Streamlit App
 st.title("Travel Planner")
 
 # Input fields
-country = st.selectbox("Enter the destination country:", ["France", "Italy", "Japan", "United States", "Spain"])
+selected_country = st.selectbox("Enter the destination country:", all_countries)
 start_date = st.date_input("Select trip start date:")
 end_date = st.date_input("Select trip end date:")
 num_adults = st.number_input("Enter the number of adults:", min_value=1, value=1)
@@ -60,7 +64,7 @@ duration = (end_date - start_date).days + 1
 
 # Button to generate travel plan
 if st.button("Generate Travel Plan"):
-    input_prompt = generate_travel_plan(country, num_adults, num_kids, travel_type, kinds_of_travelers, start_date, end_date, budget, duration, accommodation_type, accommodation_rating, dietary_restrictions, transportation_mode, interests_activities, budget_allocation)
+    input_prompt = generate_travel_plan(selected_country, num_adults, num_kids, travel_type, kinds_of_travelers, start_date, end_date, budget, duration, accommodation_type, accommodation_rating, dietary_restrictions, transportation_mode, interests_activities, budget_allocation)
 
     # Configure Google Generative AI
     genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
