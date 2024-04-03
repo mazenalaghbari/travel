@@ -14,7 +14,7 @@ def generate_travel_plan(country, num_adults, num_kids, travel_type, kinds_of_tr
     Create a detailed travel itinerary that caters to your group's interests and preferences for {num_days} days. 
     Your itinerary should cover the following aspects:
 
-    1. **Destination Highlights:** List three must-visit attractions in {country} and explain why they're worth visiting.
+    1. **Destination Highlights:** List all places  must-visit attractions in {country} and explain why they're worth visiting so this based on trip days you can offer must 60% and optional 40% based on number of days traval from selected start date and end date  .
 
     2. **Activities:** Recommend activities or experiences suitable for {kinds_of_travelers}, such as {interests_activities}.
 
