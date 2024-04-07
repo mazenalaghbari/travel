@@ -43,11 +43,11 @@ To run the application locally, follow these steps:
 git clone https://github.com/mazenalaghbari/travel-planner.git
 
 
-## Gooel API gemini key
+# Gooel API gemini key
 
 Make sure to follow the provided steps to obtain your API key and replace it in the `.env` file for the application to work properly.
 
-## run the application
+# run the application
 this application is built using Streamlit, a Python library for creating interactive web applications. To run the Travel Planner application, you simply need to execute the command streamlit run app.py in your terminal or command prompt after navigating to the project directory.
 Executing this command will start the Streamlit server, and you'll be able to access the Travel Planner application in your web browser by visiting the URL provided by Streamlit, typically http://localhost:8501.
 
