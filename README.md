@@ -51,6 +51,9 @@ openai
 huggingface_hub
 pycountry
 
+## Clone the Application
+git clone https://github.com/mazenalaghbari/travel-planner.git
+
 
 for the installation
 
